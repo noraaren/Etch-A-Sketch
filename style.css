@@ -1,0 +1,26 @@
+body{ 
+    display: flex;
+    justify-content: center;
+    align-items: centers;
+    background-color: #f0f0f0;
+}
+
+
+#container{ 
+    display: flex;
+    flex-wrap: wrap; 
+    width: 400px; 
+    height: 400px; 
+}
+
+
+.grid-square {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+
