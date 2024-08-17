@@ -68,7 +68,8 @@ body {
     
 }
 
-.eraseButton{ 
+.clearButton, 
+.eraseButton { 
     margin-top: 15px;
     background-color: bisque;
     height: 40px; 
