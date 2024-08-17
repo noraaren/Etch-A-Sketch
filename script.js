@@ -1,4 +1,7 @@
 const container = document.querySelector('#container');
+const options = document.querySelector('#options');
+const numberButton = document.createElement('button'); 
+const eraseButton = document.createElement('button');
 
 for (let i = 0; i < 256; i++){ 
     const gridSquare = document.createElement('div');
@@ -9,7 +12,20 @@ for (let i = 0; i < 256; i++){
         gridSquare.style.backgroundColor = getRandomColor();
     });
 
+    
+
 };
+
+numberButton.classList.add('numberButton');
+eraseButton.classList.add('eraseButton');
+numberButton.textContent = 'Resize ';
+eraseButton.textContent = 'Erase'
+
+options.appendChild(numberButton);
+options.appendChild(eraseButton);
+
+
+
 
 
 function getRandomColor(){ 
