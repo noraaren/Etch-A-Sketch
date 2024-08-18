@@ -3,6 +3,10 @@ const options = document.querySelector('#options');
 const numberButton = document.createElement('button'); 
 const clearButton = document.createElement('button');
 const eraseButton = document.createElement('button');
+const inputColorButton = document.createElement('input');
+inputColorButton.type = 'color';
+inputColorButton.id = 'favcolor'; 
+inputColorButton.value = '#ff0000';
 
 // Create grid squares
 for (let i = 0; i < 256; i++){ 
@@ -14,6 +18,16 @@ for (let i = 0; i < 256; i++){
         gridSquare.style.backgroundColor = getRandomColor();
     });
 }
+
+
+inputColorButton.addEventListener('input', () => {
+    const gridSquares = document.querySelectorAll('.grid-square');
+    gridSquares.forEach(square => {
+        square.addEventListener('mouseenter', () => {
+            square.style.backgroundColor = inputColorButton.value;
+        });
+    });
+});
 
 // Erase button functionality
 clearButton.addEventListener('click', () => {
@@ -35,6 +49,7 @@ eraseButton.addEventListener('click', () => {
 numberButton.classList.add('numberButton');
 clearButton.classList.add('clearButton');
 eraseButton.classList.add('eraseButton'); 
+inputColorButton.classList.add('inputColorButton');
 eraseButton.textContent = 'Erase';
 numberButton.textContent = 'Resize';
 clearButton.textContent = 'Clear';
@@ -42,6 +57,7 @@ clearButton.textContent = 'Clear';
 options.appendChild(numberButton);
 options.appendChild(clearButton);
 options.appendChild(eraseButton);
+options.appendChild(inputColorButton);
 
 function getRandomColor(){ 
     let maxVal = 0xFFFFFF; // 16777215
