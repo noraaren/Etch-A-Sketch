@@ -47,6 +47,11 @@ body {
 }
 
 
+
+.title{ 
+    font-family: "Walter Turncoat", sans-serif;
+    font-size: 30px;
+}
 #options{ 
     display: flex;
     flex-direction: column;
@@ -69,17 +74,44 @@ body {
 }
 
 .clearButton, 
-.eraseButton { 
+.eraseButton,
+.rainbowPen, 
+.numberButton, 
+.inputColorButton{ 
+    font-family:  "Ubuntu Mono", monospace;;
     margin-top: 15px;
-    background-color: bisque;
+    background-color: white;
     height: 40px; 
-    width: 150px; 
+    width: 220px; 
 }
 
-.inputColorButton{ 
-    margin-top: 15px;
-    width: 150px; 
+.clearButton:hover, 
+.eraseButton:hover,
+.rainbowPen:hover, 
+.numberButton:hover,
+.inputColorButton:hover{ 
+    background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  transform: translateX(10px);
+  transition: all 0.25s;
 }
+
+.clearButton,
+.inputColorButton{ 
+    margin-top: 40px;
+}
+
+
+
+.eraseButton{ 
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
 
 
 
