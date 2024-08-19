@@ -17,16 +17,20 @@ colorPickerInput.style.display = 'none'; // Hide the color picker by default
 
 // Create grid squares
 function createGrid(size) {
-    container.innerHTML = ''; // Clear existing grid
-    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    removePreviousGrid(); // Clear the previous grid before creating a new one
+    let gridSize = size * size;
+    const squareSize = 100 / size; // Calculate the square size based on grid dimensions
 
-    for (let i = 0; i < size * size; i++) {
+    for (let i = 0; i < gridSize; i++) {
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
+        gridSquare.style.width = `${squareSize}%`;
+        gridSquare.style.height = `${squareSize}%`;
         container.appendChild(gridSquare);
     }
 }
+
+const removePreviousGrid = () => (container.innerHTML = "");
 
 // Initialize grid with default size
 createGrid(16);
